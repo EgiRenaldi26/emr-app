@@ -8,8 +8,9 @@
         <h3 class="card-title"><strong>Edit Datasiswa</strong></h3>
     </div>
     <div class="card-body">
-            <form method="POST" action="{{ route('data.edit', $siswa->id) }}">
+            <form method="POST" action="{{ route('data.update', $siswa->id) }}">
                 @csrf
+                @method('PUT')
                 <div class="form-group">
                     <label for="nisn">NISN</label>
                     <input type="number" id="nisn" class="form-control" name="nisn" value="{{ $siswa->nisn }}">
@@ -19,11 +20,11 @@
                     <input type="text" id="nama_lengkap" class="form-control" name="nama_lengkap" value="{{ $siswa->nama_lengkap }}">
                 </div>
                 <div class="form-group">
-                    <label for="nama_kelas">Kelas</label>
-                    <select class="form-control" id="nama_kelas" name="nama_kelas">
-                        <option value="" selected>Pilih</option>
-                        <option value="12 rpl 1"  {{ $siswa->nama_kelas === 'XI RPL 1' ? 'selected' : '' }}>12 rpl 1</option>
-                        <option value="12 rpl 2" {{ $siswa->nama_kelas === 'XI RPL 2' ? 'selected' : '' }}>12 rpl 2</option>
+                    <label for="kelas_id">Kelas</label>
+                    <select class="form-control" id="kelas_id" name="kelas_id">
+                        @foreach($kelasList as $kelas)
+                            <option value="{{ $kelas->id }}">{{ $kelas->namakelas }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
@@ -35,8 +36,12 @@
                     <input type="date" id="tanggal" class="form-control" name="tanggal" value="{{ $siswa->tanggal }}">
                 </div>
                 <div class="form-group">
-                    <label for="nama_obat">Nama Obat</label>
-                    <input type="text" id="nama_obat" class="form-control" name="nama_obat" value="{{ $siswa->nama_obat }}">
+                    <label for="obat_id">Obat</label>
+                    <select class="form-control" id="obat_id" name="obat_id">
+                        @foreach($obatList as $obat)
+                            <option value="{{ $obat->id }}">{{ $obat->nama_obat }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat</label>

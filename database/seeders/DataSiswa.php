@@ -19,10 +19,10 @@ class DataSiswa extends Seeder
             [
                 'nisn' => '12344',
                 'nama_lengkap' => 'Renal',
-                'nama_kelas' => 'RPL 1',
+                'kelas_id' => 'RPL 1',
                 'sakit' => 'perut',
                 'tanggal' => '',
-                'nama_obat' => 'paramek',
+                'id_kelas' => 'paramek',
                 'alamat' => 'subang',
                 'status' => 'sembuh',
             ]

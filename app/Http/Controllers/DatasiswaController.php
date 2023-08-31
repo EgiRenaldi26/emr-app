@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
+use App\Models\Obat;
 use Illuminate\Http\Request;
 use App\Models\siswa;
 
 class DatasiswaController extends Controller
 {
+    
     
     public function __construct()
     {
@@ -16,13 +19,17 @@ class DatasiswaController extends Controller
     public function index() {
         $user = auth()->user();
         $Siswa = siswa::all();
+        $Siswa = siswa::with('class')->get();
+        $Siswa = siswa::with('class2')->get();
         return view('page.datasiswa' , compact('Siswa'), ['user' => $user]);
     }
-
+ 
     public function create()
     {
-        $user = auth()->user(); // Mendapatkan informasi user yang sedang login
-        return view('create.siswa', compact('user'));
+        $obatList = Obat::all();
+        $kelasList = Kelas::all();
+        $user = auth()->user(); 
+        return view('create.siswa', compact('user', 'kelasList', 'obatList'));
     }
 
     public function store(Request $request)
@@ -30,10 +37,10 @@ class DatasiswaController extends Controller
         $validatedData = $request->validate([
             'nisn' => 'required|unique:siswa,nisn',
             'nama_lengkap' => 'required',
-            'nama_kelas' => 'required', 
+            'kelas_id' => 'required', 
             'sakit' => 'required',
             'tanggal' => 'required|date',
-            'nama_obat' => 'required',
+            'obat_id' => 'required',
             'alamat' => 'required',
             'status' => 'required',
         ]);
@@ -47,10 +54,12 @@ class DatasiswaController extends Controller
 
     public function edit($id)
     {
-        $siswa = Siswa::find($id); // Retrieve the Siswa model based on the $id
-        return view('update.siswa', ['siswa' => $siswa]);
+        $obatList = Obat::all();
+        $kelasList = Kelas::all();
+        $siswa = Siswa::find($id);
+        $user = auth()->user(); 
+        return view('update.siswa', compact('siswa', 'user','kelasList', 'obatList'));
     }
-
 
     public function update(Request $request, $id)
     {
@@ -59,13 +68,21 @@ class DatasiswaController extends Controller
         $s->update([
             'nisn' =>$request->nisn,
             'nama_lengkap' =>$request->nama_lengkap,
-            'nama_kelas' =>$request->nama_kelas,
+            'kelas_id' =>$request->kelas_id,
             'sakit' => $request->sakit,
             'tanggal' =>$request->tanggal,
-            'nama_obat' =>$request->nama_obat,
+            'obat_id' =>$request->obat_id,
             'alamat' =>$request->alamat,
             'status' =>$request->status,
         ]);
         return redirect()->route('siswa.index')->with('success', 'Data peserta berhasil diperbarui.');
+    }
+
+    public function destroy($id)
+    {
+        $s = siswa::findOrFail($id);
+        $s->delete();
+
+        return redirect()->route('siswa.index')->with('success', 'Data berhasil dihapus.');
     }
 }

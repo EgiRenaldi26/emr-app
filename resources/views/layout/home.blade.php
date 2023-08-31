@@ -14,14 +14,14 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
+              <h3>0</h3>
 
               <p>Data Siswa</p>
             </div>
             <div class="icon">
               <i class="ion fa fa-users"></i>
             </div>
-            <a href="#" class="small-box-footer"
+            <a href="{{ url('datasiswa')}}" class="small-box-footer"
               >More info <i class="fas fa-arrow-circle-right"></i
             ></a>
           </div>
@@ -31,14 +31,14 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>0</h3>
 
               <p>Data Kelas</p>
             </div>
             <div class="icon">
               <i class="ion fa fa-stethoscope"></i>
             </div>
-            <a href="#" class="small-box-footer"
+            <a href="{{ url('datakelas')}}" class="small-box-footer"
               >More info <i class="fas fa-arrow-circle-right"></i
             ></a>
           </div>
@@ -48,14 +48,14 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>44</h3>
+              <h3>0</h3>
 
               <p>Data Obat</p>
             </div>
             <div class="icon">
               <i class="ion fa fa-medkit"></i>
             </div>
-            <a href="#" class="small-box-footer"
+            <a href="{{ url('dataobat')}}" class="small-box-footer"
               >More info <i class="fas fa-arrow-circle-right"></i
             ></a>
           </div>
@@ -64,7 +64,7 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>150</h3>
+              <h3>0</h3>
 
               <p>Permission</p>
             </div>
@@ -81,7 +81,7 @@
           <!-- small box -->
           <div class="small-box bg-dark">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>0</h3>
 
               <p>Role</p>
             </div>
@@ -98,7 +98,7 @@
           <!-- small box -->
           <div class="small-box bg-pink">
             <div class="inner">
-              <h3>44</h3>
+              <h3>0</h3>
 
               <p>User</p>
             </div>
@@ -126,7 +126,7 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
+              <h3>0</h3>
 
               <p>Data Siswa</p>
             </div>
@@ -143,7 +143,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>0</h3>
 
               <p>Data Kelas</p>
             </div>
@@ -160,7 +160,7 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>44</h3>
+              <h3>0</h3>
 
               <p>Data Obat</p>
             </div>

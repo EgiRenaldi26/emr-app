@@ -14,13 +14,13 @@
           href="{{ url('datasiswa')}}"
           class="nav-link"
         >
-          <i class="nav-icon fa f a-users"></i>
+          <i class="nav-icon fa fa-users"></i>
           <p>Data Siswa</p>
         </a>
       </li>
       <li class="nav-item">
         <a
-          href=""
+          href="{{ url('datakelas')}}"
           class="nav-link"
         >
           <i class="nav-icon fa fa-stethoscope"></i>
@@ -29,25 +29,25 @@
       </li>
       <li class="nav-item">
         <a
-          href=""
+          href="{{ url('dataobat')}}"
           class="nav-link"
         >
           <i class="nav-icon fa fa-medkit"></i>
           <p>Data Obat</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a
+          href="{{ url('')}}"
+          class="nav-link"
+        >
+        <i class="nav-icon fa fa-unlock"></i>
+          <p>Permission</p>
+        </a>
+      </li>
     </ul>
   </li>
   <!-- end -->
-  <li class="nav-item">
-    <a
-      href=""
-      class="nav-link"
-    >
-      <i class="nav-icon fa fa-calendar"></i>
-      <p>Calender</p>
-    </a>
-  </li>
   <li class="nav-item">
     <a
       href=""
@@ -98,7 +98,7 @@
       </li>
       <li class="nav-item">
         <a
-          href="{{ url('')}}"
+          href="{{ url('datakelas')}}"
           class="nav-link"
         >
           <i class="nav-icon fa fa-stethoscope"></i>
@@ -107,7 +107,7 @@
       </li>
       <li class="nav-item">
         <a
-          href="{{ url('')}}"
+          href="{{ url('dataobat')}}"
           class="nav-link"
         >
           <i class="nav-icon fa fa-medkit"></i>
@@ -117,15 +117,6 @@
     </ul>
   </li>
   <!-- end -->
-  <li class="nav-item">
-    <a
-      href="{{ url('')}}"
-      class="nav-link"
-    >
-      <i class="nav-icon fa fa-calendar"></i>
-      <p>Calender</p>
-    </a>
-  </li>
   <li class="nav-item">
     <a
       href="{{ url('logout')}}"

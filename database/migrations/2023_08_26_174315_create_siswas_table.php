@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nisn',10)->unique();
             $table->string('nama_lengkap',255);
-            $table->string('nama_kelas',255);
+            $table->bigInteger('kelas_id');
             $table->string('sakit',255);
             $table->date('tanggal');
-            $table->string('nama_obat',255);
+            $table->bigInteger('obat_id');
             $table->string('alamat',255);
             $table->string('status',255);
             $table->timestamps();
@@ -35,5 +35,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('siswa');
+        
     }
 };

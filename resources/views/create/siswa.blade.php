@@ -18,11 +18,11 @@
                     <input type="text" id="nama_lengkap" class="form-control" name="nama_lengkap">
                 </div>
                 <div class="form-group">
-                    <label for="nama_kelas">Kelas</label>
-                    <select class="form-control" id="nama_kelas" name="nama_kelas">
-                        <option value="" selected>Pilih</option>
-                        <option value="12 rpl 2">12 rpl 2</option>
-                        <option value="12 rpl 1">12 rpl 1</option>
+                    <label for="kelas_id">Kelas</label>
+                    <select class="form-control" id="kelas_id" name="kelas_id">
+                        @foreach($kelasList as $kelas)
+                            <option value="{{ $kelas->id }}">{{ $kelas->namakelas }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
@@ -34,8 +34,13 @@
                     <input type="date" id="tanggal" class="form-control" name="tanggal">
                 </div>
                 <div class="form-group">
-                    <label for="nama_obat">Nama Obat</label>
-                    <input type="text" id="nama_obat" class="form-control" name="nama_obat">
+                    <label for="obat_id">Obat</label>
+                    <select class="form-control" id="obat_id" name="obat_id">
+                        <option value="" selected>Pilih</option>
+                        @foreach($obatList as $obat)
+                            <option value="{{ $obat->id }}">{{ $obat->nama_obat }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="alamat">Alamat</label>

@@ -33,7 +33,7 @@
     <!-- Brand Logo -->
     <a href="{{ asset('/') }}index3.html" class="brand-link">
       <img
-        src="../dist/img/Electronic medical record.png"
+        src="{{ asset('dist/img/Electronic medical record.png')}}"
         alt="AdminLTE Logo"
         class=""
         style="opacity: 0.8; width:50px;"
@@ -47,7 +47,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img
-            src="../dist/img/profile.png"
+            src="{{ asset('dist/img/profile.png')}}"
             class="img-circle elevation-2"
             alt="User Image"
           />
@@ -102,7 +102,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright -2023 </strong> Software Engineering
   </footer>
 
   <!-- Control Sidebar -->
