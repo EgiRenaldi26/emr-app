@@ -28,6 +28,21 @@
                                 </div>
                             </div>
                             <div class="card-body">
+                                @if ($message = Session::get('success'))
+                                <script>
+                                    $(document).ready(function () {
+                                        var message = {!! json_encode(Session::get('success')) !!};
+                                        if (message) {
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Success Message',
+                                                text: message,
+                                                confirmButtonText: 'OK'
+                                            });
+                                        }
+                                    });
+                                </script>                                                                                                                                                     
+                                @endif
                                 <div class="table-responsive">
                                     <table class="table table-hover text-nowrap table-bordered">
                                     <thead>

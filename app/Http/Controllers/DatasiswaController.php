@@ -47,7 +47,7 @@ class DatasiswaController extends Controller
 
         siswa::create($validatedData);
 
-        return redirect()->route('siswa.index')->with('success', 'Data peserta berhasil ditambahkan.');
+        return redirect()->route('siswa.index')->with('success', 'Datasiswa Berhasil ditambahkan.');
 
         
     }
@@ -76,6 +76,7 @@ class DatasiswaController extends Controller
             'status' =>$request->status,
         ]);
         return redirect()->route('siswa.index')->with('success', 'Data peserta berhasil diperbarui.');
+        
     }
 
     public function destroy($id)

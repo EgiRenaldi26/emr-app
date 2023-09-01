@@ -51,7 +51,7 @@
                     <label for="status">Status</label>
                     <input type="text" class="form-control" id="status" name="status" value="{{ $siswa->status }}">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" ata-toggle="modal" data-target="#modal-default">Submit</button>
             </form>
           </div>
       </div>

@@ -13,7 +13,9 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('/') }}dist/css/adminlte.min.css">
   <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -119,7 +121,7 @@
 <script src="{{ asset('/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/') }}dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('/') }}dist/js/demo.js"></script>
+{{-- <!-- AdminLTE for demo purposes -->
+<script src="{{ asset('/') }}dist/js/demo.js"></script> --}}
 </body>
 </html>
