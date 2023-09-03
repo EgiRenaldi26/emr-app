@@ -14,9 +14,8 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>0\
-              </h3>
-
+              {{-- <h3>{{ $totalSiswa }}</h3> --}}
+                <h3>{{ $totalSiswa }}</h3>
               <p>Data Siswa</p>
             </div>
             <div class="icon">
@@ -32,7 +31,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>0</h3>
+              <h3>{{ $totalKelas }}</h3>
 
               <p>Data Kelas</p>
             </div>
@@ -49,7 +48,7 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>0</h3>
+              <h3>{{ $totalObat }}</h3>
 
               <p>Data Obat</p>
             </div>
@@ -144,7 +143,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>0</h3>
+              <h3>{{ $totalKelas }}</h3>
 
               <p>Data Kelas</p>
             </div>
@@ -161,7 +160,7 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>0</h3>
+              <h3>{{ $totalObat }}</h3>
 
               <p>Data Obat</p>
             </div>

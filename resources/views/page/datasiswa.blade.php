@@ -17,14 +17,16 @@
                                     <a href="{{ url('datasiswa/create') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah</a>
                                 </div>
                                 <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="max-width: 300px;">
-                                        <input type="text" name="table_search" class="form-control" placeholder="Search">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-search"></i>
-                                            </button>
+                                    <form action="" method="get">
+                                        <div class="input-group input-group-sm" style="max-width: 300px;">
+                                            <input type="text" name="keyword" class="form-control" placeholder="Search">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-default">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="card-body">
