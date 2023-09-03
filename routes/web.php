@@ -30,11 +30,12 @@ Route::get('/create', function () {
 });
 
 
-Route::get('/dashboard',[LayoutController::class,'index'])->middleware('auth');
+Route::get('/dashboard/admin',[LayoutController::class,'admin'])->middleware('auth')->name('dashboard.admin');
+Route::get('/dashboard/operator',[LayoutController::class,'operator'])->middleware('auth')->name('dashboard.operator');
 
 Route::controller(LoginController::class)->group(function() {
     Route::get('login', 'index')->name('login');
-    Route::post('login/proses' , 'proses');
+    Route::post('proses' , 'proses')->name('login.prosses');
     Route::get('logout','logout');
 
 });

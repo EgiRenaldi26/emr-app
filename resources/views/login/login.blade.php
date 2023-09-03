@@ -13,24 +13,31 @@
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Signika+Negative&family=Unbounded:wght@300&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
+        *
+        {
+            font-family: 'Signika Negative', sans-serif;
+        }
         body {
             font-family: 'Nunito', sans-serif;
+            background: linear-gradient(180deg, rgb(106.25, 142.37, 212.5) 3.71%, rgb(255, 255, 255) 100%);
         }
     </style>
 </head>
 <body class="antialiased">
 <div class="d-flex flex-column justify-content-center align-items-center min-vh-100 bg-gray-100">
     <div class="max-w-md w-full">
-        <div class="card shadow-sm">
             <div class="card-body p-4">
-                <h3 class="h3 mb-3 text-center"><strong> Electronic Medical Record</strong></h3>
                 <div style="text-align: center;"> <!-- Tambahkan ini -->
                     <img src="{{ asset('dist/img/Electronic medical record.png')}}" style="height: 200px;" alt="ini poto">
+                    <h3 class="h3 mt-3 text-center"><strong> Electronic Medical Record</strong></h3>
                 </div>
-                <form method="POST" action="{{ url('login/proses') }}">
+                <form method="POST" action="{{ route('login.prosses') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>

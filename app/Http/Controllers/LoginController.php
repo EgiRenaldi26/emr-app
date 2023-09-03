@@ -8,49 +8,28 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index() {
-        if($user = Auth::user()){
-            // if($user->role == '1'){
-            //     return redirect()->intended('admin');
-            // } elseif($user->role == '2'){
-            //     return redirect()->intended('operator');
-            // }
-            return redirect()->intended('dashboard');
-        }
-
         return view('login.login');
     }
 
     public function proses(Request $request) {
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required'
-        ],
-            [
-                'username.required' => 'Username Tidak Boleh Kosong'
-            ]
-        );
+        $credentials = $request->only('username', 'password');
 
-        $kredensial = $request->only('username','password');
-
-        if(Auth::attempt($kredensial)) {
-            $request->session()->regenerate();
+        if (Auth::attempt($credentials)) {
+            // Login berhasil
             $user = Auth::user();
-            // if($user->role == '1'){
-            //     return redirect()->intended('admin');
-            // } elseif($user->role == '2'){
-            //     return redirect()->intended('operator');
-            // }
+            $role = $user->role;
 
-            if($user) {
-                return redirect()->intended('dashboard');
+            if ($role == 'admin') {
+                return redirect()->route('dashboard.admin');
+            } elseif ($role == 'petugas') {
+                return redirect()->route('dashboard.operator');
+            } else {
             }
-
-            return redirect()->intended('/');
         }
-
-        return back()->withErrors([
-            'username' => 'Maaf username atau password salah'
-        ])->onlyInput('username');
+    //Belum selesai 
+        // Login gagal
+        return redirect()->route('login')->with('error', 'Login gagal. Periksa kembali username dan password Anda.');
+    
     }
 
     public function logout(Request $request)
