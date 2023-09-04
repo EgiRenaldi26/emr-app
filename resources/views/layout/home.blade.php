@@ -3,9 +3,7 @@
 @section('judul')
     <h1>Dashboard</h1>
 @endsection
-
 @section('isi')
-@if ($user->role == 1)
 <section class="content">
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
@@ -143,7 +141,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>{{ $totalKelas }}</h3>
+              <h3>0</h3>
 
               <p>Data Kelas</p>
             </div>
@@ -160,7 +158,7 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>{{ $totalObat }}</h3>
+              <h3>0</h3>
 
               <p>Data Obat</p>
             </div>
