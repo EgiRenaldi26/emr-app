@@ -9,7 +9,7 @@
   <li class="nav-item menu-open">
     
     <ul class="nav nav-treeview">
-      <li class="nav-item">
+      <li class="nav-item"> 
         <a
           href="{{ url('datasiswa')}}"
           class="nav-link"

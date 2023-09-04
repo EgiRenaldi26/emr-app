@@ -25,7 +25,7 @@
         }
         body {
             font-family: 'Nunito', sans-serif;
-            background: linear-gradient(180deg, rgb(106.25, 142.37, 212.5) 3.71%, rgb(255, 255, 255) 100%);
+            background: linear-gradient(0deg, rgba(45,253,244,1) 0%, rgba(0,18,255,1) 97%);
         }
     </style>
 </head>
