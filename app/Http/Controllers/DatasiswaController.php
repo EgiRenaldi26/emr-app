@@ -16,12 +16,15 @@ class DatasiswaController extends Controller
         $this->middleware('auth'); 
     }
 
-    public function index() {
+    public function index(Request $request) {
         $user = auth()->user();
-        $Siswa = siswa::all();
-        $Siswa = siswa::with('class')->get();
-        $Siswa = siswa::with('class2')->get();
-        return view('page.datasiswa' , compact('Siswa'), ['user' => $user]);
+        $keyword = $request->keyword;
+        
+        $Siswa = siswa::where('nama_lengkap', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('nisn', $keyword)
+            ->paginate(15);
+    
+        return view('page.datasiswa', compact('Siswa', 'user'));
     }
  
     public function create()
