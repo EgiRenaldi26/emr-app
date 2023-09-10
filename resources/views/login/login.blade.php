@@ -37,7 +37,7 @@
                     <img src="{{ asset('dist/img/Electronic medical record.png')}}" style="height: 200px;" alt="ini poto">
                     <h3 class="h3 mt-3 text-center"><strong> Electronic Medical Record</strong></h3>
                 </div>
-                <form method="POST" action="{{ route('login.prosses') }}">
+                <form method="POST" action="{{ route('login.login') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>

@@ -11,25 +11,22 @@ class LoginController extends Controller
         return view('login.login');
     }
 
-    public function proses(Request $request) {
+    public function login(Request $request)
+    {
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Login berhasil
             $user = Auth::user();
-            $role = $user->role;
 
-            if ($role == 'admin') {
-                return redirect()->route('dashboard.admin');
-            } elseif ($role == 'petugas') {
-                return redirect()->route('dashboard.operator');
-            } else {
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard.admin'); // Gantilah 'admin.dashboard' sesuai dengan rute dashboard admin Anda
+            } elseif ($user->role === 'petugas') {
+                return redirect()->route('dashboard.operator'); // Gantilah 'petugas.dashboard' sesuai dengan rute dashboard petugas Anda
             }
         }
-    //Belum selesai 
-        // Login gagal
-        return redirect()->route('login')->with('error', 'Login gagal. Periksa kembali username dan password Anda.');
-    
+
+        // Jika login gagal, kembalikan ke halaman login dengan pesan error
+        return redirect()->route('login')->withErrors(['username' => 'Invalid credentials']);
     }
 
     public function logout(Request $request)

@@ -9,6 +9,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PetugasC;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +31,12 @@ Route::get('/create', function () {
 });
 
 
-Route::get('/dashboard/admin',[LayoutController::class,'admin'])->middleware('auth')->name('dashboard.admin');
-Route::get('/dashboard/operator',[LayoutController::class,'operator'])->middleware('auth')->name('dashboard.operator');
+Route::get('/dashboard/admin',[LayoutController::class,'index'])->middleware('auth')->name('dashboard.admin');
+Route::get('/dashboard/operator',[PetugasC::class,'index'])->middleware('auth')->name('dashboard.operator');
 
 Route::controller(LoginController::class)->group(function() {
     Route::get('login', 'index')->name('login');
-    Route::post('proses' , 'proses')->name('login.prosses');
+    Route::post('login' , 'login')->name('login.login');
     Route::get('logout','logout');
 
 });
